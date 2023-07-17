@@ -1,37 +1,5 @@
-# JUnit XML reporter for JBehave
+package ru.testit.samples;
 
-This tool converts output to a xml report, suitable for applications that expect junit xml reports.
-
-## Getting Started
-
-### Installation
-
-#### Maven users
-
-Add this dependency to your project's POM:
-
-```xml
-<dependency>
-    <groupId>ru.testit</groupId>
-    <artifactId>jbehave-reporter-junitxml</artifactId>
-    <version>LATEST_VERSION</version>
-    <scope>compile</scope>
-</dependency>
-```
-
-#### Gradle users
-
-Add this dependency to your project's build file:
-
-```groovy
-implementation "ru.testit:jbehave-reporter-junitxml:LATEST_VERSION"
-```
-
-### Configuration
-
-Add reporter to JBehave configuration:
-
-```java
 import org.jbehave.core.ConfigurableEmbedder;
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.configuration.MostUsefulConfiguration;
@@ -91,8 +59,8 @@ public class TestStoriesRunner extends ConfigurableEmbedder {
         return new MostUsefulConfiguration()
                 .useStoryLoader(new LoadFromClasspath(this.getClass()))
                 .useStoryReporterBuilder(
-                        new TestStoryReporterBuilder(temp.toFile())
-                                .withReporters(reporter))
+                    new TestStoryReporterBuilder(temp.toFile())
+                        .withReporters(reporter))
                 .useDefaultStoryReporter(new NullStoryReporter());
     }
 
@@ -114,19 +82,3 @@ public class TestStoriesRunner extends ConfigurableEmbedder {
         }
     }
 }
-```
-
-# Contributing
-
-You can help to develop the project. Any contributions are **greatly appreciated**.
-
-* If you have suggestions for adding or removing projects, feel free to [open an issue](https://github.com/testit-tms/jbehave-reporter-junitxml/issues/new) to discuss it, or directly create a pull request after you edit the *README.md* file with necessary changes.
-* Please make sure you check your spelling and grammar.
-* Create individual PR for each suggestion.
-* Please also read through the [Code Of Conduct](https://github.com/testit-tms/jbehave-reporter-junitxml/blob/main/CODE_OF_CONDUCT.md) before posting your first idea as well.
-
-# License
-
-Distributed under the Apache-2.0 License. See [LICENSE](https://github.com/testit-tms/jbehave-reporter-junitxml/blob/main/LICENSE.md) for more information.
-
-
