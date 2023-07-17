@@ -54,6 +54,7 @@ publishing {
             pom {
                 name.set(project.name)
                 description.set("JUnit XML reporter for JBehave.")
+                url.set("https://github.com/testit-tms/jbehave-reporter-junitxml")
                 licenses {
                     license {
                         name.set("The Apache License, Version 2.0")
@@ -66,6 +67,15 @@ publishing {
                         name.set("Integration team")
                         email.set("integrations@testit.software")
                     }
+                }
+                scm {
+                    developerConnection.set("scm:git:git://github.com/testit-tms/jbehave-reporter-junitxml")
+                    connection.set("scm:git:git://github.com/testit-tms/jbehave-reporter-junitxml")
+                    url.set("https://github.com/testit-tms/jbehave-reporter-junitxml")
+                }
+                issueManagement {
+                    system.set("GitHub Issues")
+                    url.set("https://github.com/testit-tms/jbehave-reporter-junitxml/issues")
                 }
             }
         }
