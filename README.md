@@ -1,5 +1,7 @@
 # JUnit XML reporter for JBehave
 
+This tool converts output to a xml report, suitable for applications that expect junit xml reports.
+
 ## Getting Started
 
 ### Installation
