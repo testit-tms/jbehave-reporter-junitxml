@@ -114,7 +114,7 @@ val agent: Configuration by configurations.creating
 
 tasks.getByName<Test>("test") {
     useJUnitPlatform()
-    //exclude("**/samples/*")
+    exclude("**/samples/*")
     doFirst {
         jvmArgs(
             "-javaagent:${agent.singleFile}"
