@@ -8,6 +8,8 @@ import java.io.Serializable;
  */
 public class Test implements Serializable {
     private String className;
+    private long startedOn;
+    private long completedOn;
     private String name;
     private Throwable throwable;
 
@@ -28,6 +30,46 @@ public class Test implements Serializable {
      */
     public Test setClassName(String className) {
         this.className = className;
+        return this;
+    }
+
+    /**
+     * Gets startedOn.
+     *
+     * @return the startedOn
+     */
+    public long getStartedOn() {
+        return startedOn;
+    }
+
+    /**
+     * Sets startedOn.
+     *
+     * @param startedOn the value
+     * @return self for method chaining
+     */
+    public Test setStartedOn(long startedOn) {
+        this.startedOn = startedOn;
+        return this;
+    }
+
+    /**
+     * Gets completedOn.
+     *
+     * @return the completedOn
+     */
+    public long getCompletedOn() {
+        return completedOn;
+    }
+
+    /**
+     * Sets completedOn.
+     *
+     * @param completedOn the value
+     * @return self for method chaining
+     */
+    public Test setCompletedOn(long completedOn) {
+        this.completedOn = completedOn;
         return this;
     }
 

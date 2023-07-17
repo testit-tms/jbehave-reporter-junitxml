@@ -106,8 +106,6 @@ publishing.publications.named<MavenPublication>("maven") {
     }
 }
 
-val okhttpVersion = "4.10.0"
-
 val junitVersion = "5.8.2"
 val jbehaveVersion = "4.8.3"
 val aspectjVersion = "1.9.7"
@@ -116,7 +114,7 @@ val agent: Configuration by configurations.creating
 
 tasks.getByName<Test>("test") {
     useJUnitPlatform()
-    exclude("**/samples/*")
+    //exclude("**/samples/*")
     doFirst {
         jvmArgs(
             "-javaagent:${agent.singleFile}"

@@ -35,16 +35,16 @@ public class JunitXmlReporter extends NullStoryReporter {
 
     @Override
     public void beforeScenario(final Scenario scenario) {
-        startTestCase(scenario);
-    }
-
-    protected void startTestCase(Scenario scenario) {
         executableTest = ScenarioParser
                 .parseScenario(executableStory.get(), scenario);
+
+        executableTest.setStartedOn(System.nanoTime());
     }
 
     @Override
     public void afterScenario() {
+        executableTest.setCompletedOn(System.nanoTime());
+
         tests.add(executableTest);
 
         writer.write(tests);

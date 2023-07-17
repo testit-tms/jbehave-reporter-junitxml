@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.io.FileOutputStream;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Locale;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -64,8 +65,14 @@ public class XmlFileWriter {
         for (Test testResult : testResults) {
             Element testcase = document.createElement("testcase");
 
+            String time = String.format(
+                    Locale.ROOT,
+                    "%.3f",
+                    (float) (testResult.getCompletedOn() - testResult.getStartedOn()) / 1000000000);
+
             testcase.setAttribute("name", testResult.getName());
             testcase.setAttribute("classname", testResult.getClassName());
+            testcase.setAttribute("time", time);
 
             if (testResult.getThrowable() != null) {
                 Element failure = document.createElement("failure");

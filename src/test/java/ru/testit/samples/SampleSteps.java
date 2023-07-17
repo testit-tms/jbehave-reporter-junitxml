@@ -5,6 +5,8 @@ import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
 
 
+import java.util.concurrent.TimeUnit;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SampleSteps {
@@ -14,8 +16,9 @@ public class SampleSteps {
     private int c;
 
     @Given("a is $number")
-    public void a_is(int arg1) {
+    public void a_is(int arg1) throws InterruptedException {
         this.a = arg1;
+        TimeUnit.SECONDS.sleep(1);
     }
 
     @Given("b is $number")
